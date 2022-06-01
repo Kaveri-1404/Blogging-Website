@@ -1,0 +1,38 @@
+<%-include ("partials/header"); -%>
+
+
+
+
+
+
+    <div class="container">
+        <header class="mt-4 p-5 bg-secondary text-whiterounded">
+            <div class="container">
+                <h1>Welcome to YelpCamp!!</h1>
+                <p>View our hand-picked campgrounds from all over the world :)</p>
+                <p><a class="btn btn-primary" href="/campgrounds/new" role="button">Add new campground</a></p>
+            </div>
+        </header>
+
+        <div class="row text-center">
+            <div style="padding-top:25px"></div>
+            <%cg.forEach(function(cg){%>
+                <div class="col-md-3 col-sm-6">
+                    <div class="border border-success">
+                        <img src="<%=cg.image%>" class="img-fluid" alt="Responsive image">
+
+                        <div class="caption">
+                            <h4>
+                                <%=cg.name%>
+                            </h4>
+                        </div>
+                        <p><a href="/campgrounds/<%=cg._id%>" class="btn btn-primary">More info</a></p>
+                    </div>
+                </div>
+
+                <%});%>
+        </div>
+    </div>
+    </div>
+
+    <%-include ("partials/footer"); -%>
